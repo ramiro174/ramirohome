@@ -35,6 +35,6 @@ Route::get("/enviar/numero",function(Request $R){
 Route::get("/obtener/numero",function(Request $R){
     
     Return  Response::json(["resultados"=>Carta::groupBy('nombre')
-        ->selectRaw('nombre,count(*) as total,' )
+        ->selectRaw('nombre,count(*) as total' )
         ->get()]);
 });
