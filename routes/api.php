@@ -27,7 +27,7 @@ Route::get("/numero",function(){
     Return Response::json(["numero"=>rand(1,11)]);
 });
 Route::post("/enviar/numero",function(Request $R){
-    $n=1; //$R->get("numero");
+    $n=$R->get("numero");
     $nombre=$R->get("nombre");
     $c= Carta::create(["numero"=>$n,"nombre"=>$nombre]);
     Return Response::json(["carta"=>$c]);
