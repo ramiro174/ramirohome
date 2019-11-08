@@ -28,7 +28,7 @@ Route::get("/numero",function(){
 });
 Route::get("/enviar/numero",function(Request $R){
     $n=1; //$R->get("numero");
-    $nombre="ss"; //$R->get("nombre");
+    $nombre=$R->get("nombre");
     $c= Carta::create(["numero"=>$n,"nombre"=>$nombre]);
     Return Response::json(["carta"=>$c]);
 });
