@@ -41,7 +41,7 @@ Route::get("/obtener/numero",function(Request $R){
     Return Response::json(["resultados"=>Carta::all()]);
 });
 Route::get("/borrar/numero",function(Request $R){
-                Carta::all()->delete();
+                Carta::deleted();
    
     Return Response::json(["resultados"=>"Se limipo"]);
 });
