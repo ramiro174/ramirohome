@@ -40,3 +40,8 @@ Route::get("/obtener/click",function(Request $R){
 Route::get("/obtener/numero",function(Request $R){
     Return Response::json(["resultados"=>Carta::all()]);
 });
+Route::get("/borrar/numero",function(Request $R){
+                Carta::all()->delete();
+   
+    Return Response::json(["resultados"=>"Se limipo"]);
+});
