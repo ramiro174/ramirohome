@@ -50,7 +50,7 @@ Route::get("/borrar/numero",function(Request $R){
 
 
 Route::post("/guardargps",function(Request $request){
-  return $request->get("nombre");
+
     $gp=  gps::create([
         "nombre"=>$request->get("nombre"),
         "latitud"=>$request->get("latitud"),
