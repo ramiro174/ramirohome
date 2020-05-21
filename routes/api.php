@@ -1,9 +1,10 @@
 <?php
-    
+
+    use App\gps;
     use App\models\Carta;
     use Illuminate\Http\Request;
-    
-    
+
+
     /*
     |--------------------------------------------------------------------------
     | API Routes
@@ -42,6 +43,18 @@ Route::get("/obtener/numero",function(Request $R){
 });
 Route::get("/borrar/numero",function(Request $R){
                 Carta::where("id",">=",0)->delete();
-   
+
     Return Response::json(["resultados"=>"Se limipo"]);
+});
+
+
+
+Route::post("/guardargps",function(Request $request){
+
+   return  gps::create([
+        "nombre"=>"Ramiro",
+        "latitud"=>"0",
+        "longitud"=>"0"
+
+    ]);
 });
