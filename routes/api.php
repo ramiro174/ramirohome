@@ -51,10 +51,15 @@ Route::get("/borrar/numero",function(Request $R){
 
 Route::post("/guardargps",function(Request $request){
 
-   return  gps::create([
-        "nombre"=>"Ramiro",
-        "latitud"=>"0",
-        "longitud"=>"0"
-
+    $gp=  gps::create([
+        "nombre"=>$request->get("nombre"),
+        "latitud"=>$request->get("latitud"),
+        "longitud"=>$request->get("longitud")
     ]);
+    return Response::json(["data"=>$gp]);
 });
+
+    Route::post("/recuperargps",function(Request $request){
+        $gp=  gps::all();
+        return Response::json(["data"=>$gp]);
+    });
