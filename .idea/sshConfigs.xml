@@ -4,6 +4,7 @@
     <configs>
       <sshConfig host="ramiro174.com" id="39673e48-1426-47a0-8ddd-a8c5efb8e0dd" keyPath="$USER_HOME$/.ssh/id_rsa" port="2222" customName="casaramiro" nameFormat="CUSTOM" username="ramiro" />
       <sshConfig host="ramiro174.com" id="f5402a0e-a0a9-4c6d-9dff-dbff515be48d" localPort="2222" port="2222" nameFormat="DESCRIPTIVE" username="ramiro" />
+      <sshConfig host="ramiro174.com" id="ba95cc47-3ac0-4386-b9cd-34cd4f47da74" keyPath="$USER_HOME$/.ssh/id_rsa" port="2222" customName="casaramiro" nameFormat="CUSTOM" username="ramiro" />
     </configs>
   </component>
 </project>
