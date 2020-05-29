@@ -29,3 +29,5 @@ Route::get('/resultados',function(){
     $car=Carta::all();
     return view('resultados')->with("cartas",$car);
 });
+
+Route::get('/gps/get','GpsController@getGpsRegisters');
