@@ -64,54 +64,50 @@
         cache:false,
         success:function (data) {
 
-            var ubicaciones = data;
-
-            // funcion init map (ver mapa)
-            function initMap() {
-
-                var mapa;
-
-                // opciones del mapa
-                var opciones = {
-                    zoom: 12,
-                    center : {lat:25.537698,lng:-103.414165}
-                }
-
-                // asignando mapa
-                mapa = new google.maps.Map(document.getElementById('mapa'),opciones);
-
-                function addMarker(ubicacion){
-                    var marker = new google.maps.Marker({
-                        position:{lat:ubicacion.latitud,lng:ubicacion.longitud},
-                        map:mapa
-                    });
-
-                    var infoWindow = new google.maps.InfoWindow({
-                        content:'<h2>'+ubicacion.nombre+'</h2>'
-                    })
-
-                    marker.addListener('click',function () {
-                        infoWindow.open(mapa,marker);
-                    });
-                }
-
-                ubicaciones.data.forEach(ubicacion =>
-                    {
-                        ubicacion.latitud = parseFloat(ubicacion.latitud);
-                        ubicacion.longitud = parseFloat(ubicacion.longitud);
-                        addMarker(ubicacion);
-                    }
-                );
-
-            }
-            initMap();
+            initMap(data);
 
         },
         error:function (error) {
             alert('Intente más tarde');
         }
     });
+    function initMap(Datos) {
 
+        var mapa;
+
+        // opciones del mapa
+        var opciones = {
+            zoom: 12,
+            center : {lat:25.537698,lng:-103.414165}
+        }
+
+        // asignando mapa
+        mapa = new google.maps.Map(document.getElementById('mapa'),opciones);
+
+        function addMarker(ubicacion){
+            var marker = new google.maps.Marker({
+                position:{lat:ubicacion.latitud,lng:ubicacion.longitud},
+                map:mapa
+            });
+
+            var infoWindow = new google.maps.InfoWindow({
+                content:'<h2>'+ubicacion.nombre+'</h2>'
+            })
+
+            marker.addListener('click',function () {
+                infoWindow.open(mapa,marker);
+            });
+        }
+
+        Datos.data.forEach(ubicacion =>
+            {
+                ubicacion.latitud = parseFloat(ubicacion.latitud);
+                ubicacion.longitud = parseFloat(ubicacion.longitud);
+                addMarker(ubicacion);
+            }
+        );
+
+    }
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgPHJgYDvFuQiUtONDSS-v0WlZ0fD6-Bk&callback=initMap">
 
