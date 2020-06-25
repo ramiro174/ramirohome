@@ -2,8 +2,8 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig host="ramiro174.com" id="39673e48-1426-47a0-8ddd-a8c5efb8e0dd" keyPath="$USER_HOME$/.ssh/id_rsa" port="2222" customName="casaramiro" nameFormat="CUSTOM" username="ramiro" />
-      <sshConfig host="ramiro174.com" id="f5402a0e-a0a9-4c6d-9dff-dbff515be48d" localPort="2222" port="2222" nameFormat="DESCRIPTIVE" username="ramiro" />
+      <sshConfig host="ramiro174.com" id="f5402a0e-a0a9-4c6d-9dff-dbff515be48d" keyPath="$USER_HOME$/.ssh/id_rsa" localPort="2222" port="2222" nameFormat="DESCRIPTIVE" username="ramiro" />
+      <sshConfig host="ramiro174.com" id="949de1ad-2b8e-43cc-97d4-52665c76c288" keyPath="$USER_HOME$/.ssh/id_rsa" port="2222" customName="casaramiro" nameFormat="CUSTOM" username="ramiro" />
       <sshConfig host="ramiro174.com" id="d590341f-27ad-4baf-8581-e289e533f7e2" keyPath="$USER_HOME$/.ssh/id_rsa" port="2222" customName="casaramiro" nameFormat="CUSTOM" />
     </configs>
   </component>
