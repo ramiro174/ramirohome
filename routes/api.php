@@ -53,3 +53,9 @@
         $gp = gps::all();
         return Response::json(["data" => $gp]);
     });
+
+
+    Route::get("/cartaloteria", function (Request $request) {
+
+        return Response::json(["numero" => rand(1, 54)]);
+    })->middleware('auth:api');;
