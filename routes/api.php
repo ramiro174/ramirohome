@@ -15,14 +15,22 @@
     |
     */
     Route::middleware('auth:api')->get('/user', function (Request $request) {
+
+
         return $request->user();
     });
     Route::get("/app", function () {
         return "aaa";
     })->middleware('auth:api');
+
     Route::get("/numero", function () {
         return Response::json(["numero" => rand(1, 11)]);
     });
+    Route::get("/persona", function () {
+        return Response::json(["nombre" =>"Juan"]);
+    });
+
+
     Route::post("/enviar/numero", function (Request $R) {
         $n = $R->get("numero");
         $nombre = $R->get("nombre");
